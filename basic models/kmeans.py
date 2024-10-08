@@ -1,9 +1,10 @@
+# not running successfully on tf 1.15 just see the code
 import numpy as np
 import tensorflow as tf
-from tensorflow.contrib.factorization import KMeans
-from tensorflow.examples.tutorials.mnist import input_data
+# from tensorflow_core.contrib.factorization import KMeansClustering
+from tensorflow_core.examples.tutorials.mnist import input_data
 
-mnist = input_data.read_data_sets("/tmp/data/", one_hot=True)
+mnist = input_data.read_data_sets("tmp/data/", one_hot=True)
 full_data_x = mnist.train.images
 
 num_steps = 50
@@ -15,7 +16,8 @@ num_features = 784
 X = tf.placeholder(tf.float32, shape=[None, num_features])
 y = tf.placeholder(tf.float32, shape=[None, num_classes])
 
-kmeans = KMeans(inputs=X, num_clusters=k, distance_metric="cosine", use_mini_batch=True)
+kmeans = tf.contrib.factorization.KMeans(inputs=X, num_clusters=k, distance_metric="cosine", use_mini_batch=True)
+
 
 # all_scores: distance of each input to each cluster center.
 # score: distance of each input to closest cluster center.

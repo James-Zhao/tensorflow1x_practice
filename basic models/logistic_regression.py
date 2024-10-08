@@ -1,8 +1,8 @@
 from __future__ import print_function
 
 import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
-mnist = input_data.read_data_sets("/tmp/data/", one_hot=True)
+from tensorflow_core.examples.tutorials.mnist import input_data
+mnist = input_data.read_data_sets("tmp/data/", one_hot=True) # 这里偷懒 把数据下载到了本地 不然要解决一个urllib.error.URLError报错
 
 # Parameters
 learning_rate = 0.01

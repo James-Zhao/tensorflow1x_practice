@@ -1,8 +1,8 @@
 from __future__ import division, print_function, absolute_import
 import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
+from tensorflow_core.examples.tutorials.mnist import input_data
 
-mnist = input_data.read_data_sets("/tmp/data/", one_hot=True)
+mnist = input_data.read_data_sets("tmp/data/", one_hot=True)
 
 # 参数
 learning_rate = 0.001

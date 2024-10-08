@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
 
-from tensorflow.examples.tutorials.mnist import input_data
+from tensorflow_core.examples.tutorials.mnist import input_data
 
 mnist = input_data.read_data_sets("tmp/data/", one_hot=True)
 # 只取5000个样本作为训练集 200个样本作为测试集
@@ -11,7 +11,7 @@ X_test, y_test = mnist.test.next_batch(200)
 x_tr = tf.placeholder("float", [None, 784])
 x_te = tf.placeholder("float", [784])
 
-distance = tf.reduce_sum(tf.abs(tf.add(x_tr, tf.negative(x_te))), reduction_indices=1)
+distance = tf.reduce_sum(tf.abs(tf.add(x_tr, tf.negative(x_te))), axis=1)
 pred = tf.argmin(distance, 0)
 
 accuracy = 0

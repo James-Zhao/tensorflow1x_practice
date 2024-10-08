@@ -22,6 +22,8 @@ X = tf.placeholder("float")
 Y = tf.placeholder("float")
 
 # Set model weights
+# Variable 必须要初始化 一般用于存训练变量 比如模型的weight和bias
+# placeholder不用初始化 在sess.run的时候由feed_dict输入 主要用于输入样本
 W = tf.Variable(rng.randn(), name="weight")
 b = tf.Variable(rng.randn(), name="bias")
 

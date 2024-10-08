@@ -1,7 +1,7 @@
 from __future__ import print_function
-
-from tensorflow.examples.tutorials.mnist import input_data
-mnist = input_data.read_data_sets("/tmp/data", one_hot=False)
+import tensorflow_core
+from tensorflow_core.examples.tutorials.mnist import input_data
+mnist = input_data.read_data_sets("tmp/data", one_hot=False)
 
 import tensorflow as tf
 
@@ -16,7 +16,7 @@ n_hidden_2 = 256
 num_input = 784
 num_classes = 10
 
-input_fn = tf.estimator.inputs.numpy_input_fn(
+input_fn = tensorflow_core.estimator.inputs.numpy_input_fn(
     x={'images': mnist.train.images}, y=mnist.train.labels,
     batch_size=batch_size, num_epochs=None, shuffle=True
 )

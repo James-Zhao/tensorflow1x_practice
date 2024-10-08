@@ -1,10 +1,10 @@
 import tensorflow as tf
-from tensorflow.contrib.boosted_trees.estimator_batch.estimator import GradientBoostedDecisionTreeClassifier
-from tensorflow.contrib.boosted_trees.proto import learner_pb2 as gbdt_learner
+from tensorflow_core.contrib.boosted_trees.estimator_batch.estimator import GradientBoostedDecisionTreeClassifier
+from tensorflow_core.contrib.boosted_trees.proto import learner_pb2 as gbdt_learner
 
 tf.logging.set_verbosity(tf.logging.ERROR)
-from tensorflow.examples.tutorials.mnist import input_data
-mnist = input_data.read_data_sets("/tmp/data/", one_hot=False)
+from tensorflow_core.examples.tutorials.mnist import input_data
+mnist = input_data.read_data_sets("tmp/data/", one_hot=False)
 
 batch_size = 4096
 num_classes = 10

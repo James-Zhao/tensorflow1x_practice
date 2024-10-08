@@ -1,10 +1,10 @@
 import tensorflow as tf
 from tensorflow.python.ops import resources
-from tensorflow.contrib.tensor_forest.python import tensor_forest
+from tensorflow_core.contrib.tensor_forest.python import tensor_forest
 
-from tensorflow.examples.tutorials.mnist import input_data
+from tensorflow_core.examples.tutorials.mnist import input_data
 # one_hot是对y进行编码
-mnist = input_data.read_data_sets("/tmp/data/", one_hot=False)
+mnist = input_data.read_data_sets("tmp/data/", one_hot=False)
 
 # 超参
 num_steps = 500
